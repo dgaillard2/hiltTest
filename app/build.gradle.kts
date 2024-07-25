@@ -5,6 +5,7 @@ plugins {
     alias(libs.plugins.jetbrains.kotlin.android)
     kotlin("kapt")
     alias(libs.plugins.compose.compiler)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -69,4 +70,7 @@ dependencies {
     debugImplementation(libs.androidx.ui.test.manifest)
     kapt(libs.hilt.compiler)
     implementation(libs.hilt.dagger)
+    implementation(libs.room.runtime)
+    kapt(libs.room.ksp)
+    implementation(libs.room.ktx)
 }

@@ -1,7 +1,7 @@
 package com.example.testhilt.di
 
-import com.example.testhilt.models.TestRepository
-import com.example.testhilt.models.TestRepositoryImpl
+import com.example.testhilt.repositories.TestRepository
+import com.example.testhilt.repositories.TestRepositoryImpl
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

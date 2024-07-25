@@ -10,6 +10,7 @@ import androidx.compose.foundation.layout.padding
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import com.example.testhilt.ui.theme.TestHiltTheme
@@ -21,15 +22,20 @@ class MainActivity : ComponentActivity() {
 
     private val exampleViewModel: MainActivityViewModel by viewModels()
 
+
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
+        exampleViewModel.createFakeData()
 
         setContent {
             TestHiltTheme {
+
+                val message = exampleViewModel.text.collectAsState()
                 Scaffold(modifier = Modifier.fillMaxSize()) { innerPadding ->
                     Greeting(
-                        name = exampleViewModel.getFakeText(),
+                        name = message.value,
                         modifier = Modifier.padding(innerPadding)
                     )
                 }
