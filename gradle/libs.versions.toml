@@ -13,9 +13,15 @@ hiltdagger = "2.49"
 hiltnavigation = "1.2.0"
 classpathhiltandroidgradleplugin = "2.49"
 room = "2.6.1"
+accompanist = "0.26.0-alpha"
+classpathdatadog = "1.12.0"
+datadog = "2.3.0"
 
 
 [libraries]
+accompanist-insets = { module = "com.google.accompanist:accompanist-insets", version.ref = "accompanist" }
+accompanist-permissions = { module = "com.google.accompanist:accompanist-permissions", version.ref = "accompanist" }
+accompanist-systemuicontroller = { module = "com.google.accompanist:accompanist-systemuicontroller", version.ref = "accompanist" }
 androidx-core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "coreKtx" }
 junit = { group = "junit", name = "junit", version.ref = "junit" }
 androidx-junit = { group = "androidx.test.ext", name = "junit", version.ref = "junitVersion" }
@@ -37,6 +43,11 @@ hilt-navigation = { module = "androidx.hilt:hilt-navigation-compose", version.re
 room-ksp = { module = "androidx.room:room-compiler", version.ref = "room" }
 room-ktx = { module = "androidx.room:room-ktx", version.ref = "room" }
 room-runtime = { module = "androidx.room:room-runtime", version.ref = "room" }
+datadog-compose = { module = "com.datadoghq:dd-sdk-android-compose", version.ref = "datadog" }
+datadog-okhttp = { module = "com.datadoghq:dd-sdk-android-okhttp", version.ref = "datadog"}
+datadog-rum = { module = "com.datadoghq:dd-sdk-android-rum", version.ref = "datadog" }
+datadog-timber = { module = "com.datadoghq:dd-sdk-android-timber", version.ref = "datadog" }
+classpath-datadog = { module = "com.datadoghq:dd-sdk-android-gradle-plugin", version.ref = "classpathdatadog" }
 
 
 [plugins]

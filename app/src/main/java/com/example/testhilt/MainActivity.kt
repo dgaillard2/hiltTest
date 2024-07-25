@@ -13,8 +13,10 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import com.datadog.android.compose.ExperimentalTrackingApi
 import com.example.testhilt.ui.theme.TestHiltTheme
 import com.example.testhilt.vm.MainActivityViewModel
+import com.google.accompanist.permissions.ExperimentalPermissionsApi
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -24,6 +26,7 @@ class MainActivity : ComponentActivity() {
 
 
 
+    @OptIn(ExperimentalPermissionsApi::class, ExperimentalTrackingApi::class)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -45,6 +48,8 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
+
+@ExperimentalPermissionsApi
 fun Greeting(name: String, modifier: Modifier = Modifier) {
     Text(
         text = "Hello $name!",
@@ -52,6 +57,7 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
     )
 }
 
+@OptIn(ExperimentalPermissionsApi::class)
 @Preview(showBackground = true)
 @Composable
 fun GreetingPreview() {
